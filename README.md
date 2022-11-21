@@ -1,2 +1,2 @@
 # Tech trends - Project
-Tech trends project created for UDACITY Course
+Tech trends project created for Udacity Course.
