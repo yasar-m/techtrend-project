@@ -1,11 +1,77 @@
 ## Docker commands used to build the application 
+
+#Docker File created in  
+https://github.com/yasar-m/techtrend-project/blob/master/DockerFile
+
 # TODO: insert the docker build command
+
+D:\Training\UCACDP\GitHub\techtrend-project>docker build -t yasarm/techtrends .
+[+] Building 5.3s (10/10) FINISHED
+ => [internal] load build definition from Dockerfile                                                                                                                                                          0.0s
+ => => transferring dockerfile: 32B                                                                                                                                                                           0.0s
+ => [internal] load .dockerignore                                                                                                                                                                             0.0s
+ => => transferring context: 2B                                                                                                                                                                               0.0s
+ => [internal] load metadata for docker.io/library/python:3.8                                                                                                                                                 5.1s
+ => [auth] library/python:pull token for registry-1.docker.io                                                                                                                                                 0.0s
+ => [internal] load build context                                                                                                                                                                             0.0s
+ => => transferring context: 789B                                                                                                                                                                             0.0s
+ => [1/4] FROM docker.io/library/python:3.8@sha256:89986864f936860f6e74a7540ab98b23586011e90482b09125aa6792f2ea0195                                                                                           0.0s
+ => CACHED [2/4] COPY /techtrends /app                                                                                                                                                                        0.0s
+ => CACHED [3/4] WORKDIR /app                                                                                                                                                                                 0.0s
+ => CACHED [4/4] RUN pip install -r requirements.txt                                                                                                                                                          0.0s
+ => exporting to image                                                                                                                                                                                        0.0s
+ => => exporting layers                                                                                                                                                                                       0.0s
+ => => writing image sha256:f39bde3f80eddfbad98040150c2f04fd46f6bfca3b3311b803a99ef81a6c985c                                                                                                                  0.0s
+ => => naming to docker.io/yasarm/techtrends
 
 ## Docker commands used to run the application
 # TODO: insert the docker run command
+D:\Training\UCACDP\GitHub\techtrend-project>docker run --name techtrendsapp -p 7111:3111 -d yasarm/techtrends
+562ff67202edc7c2c7a6b72010fafb3072230f06ed75fc9dcacc8b6ffca0ff43
 
 ## Docker commands used to get the application logs
 # TODO: insert the docker logs command
+D:\Training\UCACDP\GitHub\techtrend-project>docker logs techtrendsapp -f
 
 ## Logs from the container running the TechTrends application
 # TODO: paste logs from the Docker container 
+
+D:\Training\UCACDP\GitHub\techtrend-project>docker logs techtrendsapp -f
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+werkzeug WARNING  2022-11-21 05:51:29,313  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+werkzeug INFO     2022-11-21 05:51:29,314  * Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
+root INFO     2022-11-21 05:52:34,700 Index page loaded
+werkzeug INFO     2022-11-21 05:52:34,725 172.17.0.1 - - [21/Nov/2022 05:52:34] "GET / HTTP/1.1" 200 -
+werkzeug INFO     2022-11-21 05:52:34,794 172.17.0.1 - - [21/Nov/2022 05:52:34] "GET /static/css/main.css HTTP/1.1" 200 -
+werkzeug INFO     2022-11-21 05:52:34,972 172.17.0.1 - - [21/Nov/2022 05:52:34] "GET /favicon.ico HTTP/1.1" 404 -
+root INFO     2022-11-21 05:52:37,804 Article Kubernetes v1.20 Release Notes retrieved!
+werkzeug INFO     2022-11-21 05:52:37,811 172.17.0.1 - - [21/Nov/2022 05:52:37] "GET /3 HTTP/1.1" 200 -
+werkzeug INFO     2022-11-21 05:52:37,837 172.17.0.1 - - [21/Nov/2022 05:52:37] "GET /static/css/main.css HTTP/1.1" 304 -
+root ERROR    2022-11-21 05:52:40,541 A non-existing article 36 is accessed and a 404 page is returned.
+werkzeug INFO     2022-11-21 05:52:40,545 172.17.0.1 - - [21/Nov/2022 05:52:40] "GET /36 HTTP/1.1" 404 -
+werkzeug INFO     2022-11-21 05:52:40,581 172.17.0.1 - - [21/Nov/2022 05:52:40] "GET /static/css/main.css HTTP/1.1" 304 -
+root DEBUG    2022-11-21 05:52:43,580 metrics api invoked
+werkzeug INFO     2022-11-21 05:52:43,581 172.17.0.1 - - [21/Nov/2022 05:52:43] "GET /metrics HTTP/1.1" 200 -
+root DEBUG    2022-11-21 05:52:47,377 Healthz api invoked
+werkzeug INFO     2022-11-21 05:52:47,377 172.17.0.1 - - [21/Nov/2022 05:52:47] "GET /healthz HTTP/1.1" 200 -
+root INFO     2022-11-21 05:52:50,726 Index page loaded
+werkzeug INFO     2022-11-21 05:52:50,728 172.17.0.1 - - [21/Nov/2022 05:52:50] "GET / HTTP/1.1" 200 -
+werkzeug INFO     2022-11-21 05:52:50,761 172.17.0.1 - - [21/Nov/2022 05:52:50] "GET /static/css/main.css HTTP/1.1" 304 -
+root INFO     2022-11-21 05:52:52,801 The "About Us" page is retrieved.
+werkzeug INFO     2022-11-21 05:52:52,805 172.17.0.1 - - [21/Nov/2022 05:52:52] "GET /about HTTP/1.1" 200 -
+werkzeug INFO     2022-11-21 05:52:52,834 172.17.0.1 - - [21/Nov/2022 05:52:52] "GET /static/css/main.css HTTP/1.1" 304 -
+werkzeug INFO     2022-11-21 05:52:55,531 172.17.0.1 - - [21/Nov/2022 05:52:55] "GET /create HTTP/1.1" 200 -
+werkzeug INFO     2022-11-21 05:52:55,560 172.17.0.1 - - [21/Nov/2022 05:52:55] "GET /static/css/main.css HTTP/1.1" 304 -
+root INFO     2022-11-21 05:53:01,327 A new article is created with title test.
+werkzeug INFO     2022-11-21 05:53:01,327 172.17.0.1 - - [21/Nov/2022 05:53:01] "POST /create HTTP/1.1" 302 -
+root INFO     2022-11-21 05:53:01,337 Index page loaded
+werkzeug INFO     2022-11-21 05:53:01,338 172.17.0.1 - - [21/Nov/2022 05:53:01] "GET / HTTP/1.1" 200 -
+werkzeug INFO     2022-11-21 05:53:01,386 172.17.0.1 - - [21/Nov/2022 05:53:01] "GET /static/css/main.css HTTP/1.1" 304 -
+root INFO     2022-11-21 05:53:16,061 Article test retrieved!
+werkzeug INFO     2022-11-21 05:53:16,062 172.17.0.1 - - [21/Nov/2022 05:53:16] "GET /12 HTTP/1.1" 200 -
+werkzeug INFO     2022-11-21 05:53:16,099 172.17.0.1 - - [21/Nov/2022 05:53:16] "GET /static/css/main.css HTTP/1.1" 304 -
