@@ -1,0 +1,1 @@
+https://github.com/yasar-m/techtrend-project/blob/main/techtrends/app.py
