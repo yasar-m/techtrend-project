@@ -105,9 +105,11 @@ def create():
 if __name__ == "__main__":
     # set logger to handle STDOUT and STDERR 
     stdout_handler =  logging.StreamHandler(sys.stdout)
+    stdout_handler.level = logging.DEBUG
     stderr_handler =  logging.StreamHandler(sys.stderr)
+    stderr_handler.level = logging.ERROR
     handlers = [stderr_handler, stdout_handler]
     # format output
     format_output = '%(name)s %(levelname)-8s %(asctime)s %(message)s' # formating output here
-    logging.basicConfig(format=format_output, level=logging.DEBUG, handlers=handlers)
+    logging.basicConfig(format=format_output, handlers=handlers)
     app.run(host='0.0.0.0', port='3111')
